@@ -8,7 +8,7 @@ contract Lock {
     uint public unlockTime;
     address payable public owner;
 
-    error NotInTime();
+    error WithdralNotPossible();
     error NotOwner();
 
     event Withdrawal(uint amount, uint when);
