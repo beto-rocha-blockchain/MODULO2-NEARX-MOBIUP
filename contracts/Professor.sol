@@ -2,7 +2,7 @@
 pragma solidity 0.8.24;
 
 struct Professor {
-    string name;
+    string nome;
     uint horaAula;
     uint horasTrabalhadas;
 }
