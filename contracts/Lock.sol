@@ -8,7 +8,7 @@ contract Lock {
     uint public unlockTime;
     address payable public owner;
 
-    error WithdralNotPossible();
+    error WithdrawalNotPossible();
     error NotOwner();
 
     event Withdrawal(uint amount, uint when);
@@ -28,7 +28,7 @@ contract Lock {
         // console.log("Unlock time is %o and block timestamp is %o", unlockTime, block.timestamp);
 
         if (block.timestamp < unlockTime) {
-            revert WithdrawNotPossible();
+            revert WithdrawalNotPossible();
         }
 
         require(block.timestamp >= unlockTime, "You can't withdraw yet");
