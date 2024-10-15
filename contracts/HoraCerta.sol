@@ -16,6 +16,10 @@ contract HoraCerta {
         emit ProfessorRegistrado(_profAddress, _professor)
     }
 
+    function mudarNomeProfessor(address _profAddress, int _horas) public {
+        professores[_profAddress].nome = _nome;
+    }
+
     function registrarHora(address _profAddress, int _horas) public {
         if (_horas < 0) {
             revert HoraNaoValida();
@@ -23,5 +27,5 @@ contract HoraCerta {
 
         professores[_profAddress].horasTrabalhadas += _horas;
     }
-    
+
 }
